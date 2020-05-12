@@ -22,11 +22,11 @@ RUN go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/speedtest_exporte
 
 FROM gcr.io/distroless/base
 
-LABEL summary="Speedtest Prometheus exporter" \
-      description="A Prometheus exporter for speedtest" \
-      name="nlamirault/speedtest_exporter" \
-      url="https://github.com/nlamirault/speedtest_exporter" \
-      maintainer="Nicolas Lamirault <nicolas.lamirault@gmail.com>"
+LABEL summary="Speedtest Exporter - ARM Version" \
+      description="ARM Image for the Prometheus speedtest_exporter" \
+      name="shrunbr/speedtest-exporter-arm" \
+      url="https://github.com/shrunbr/speedtest-exporter-arm" \
+      maintainer="<cthulhu@cthu.io>"
 
 COPY --from=builder /go/bin/speedtest_exporter /usr/bin/speedtest_exporter
 
